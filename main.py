@@ -26,5 +26,5 @@ def friends_page():
     return Response(friens_list, media_type="text/html")
     
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+'''if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8080)'''
