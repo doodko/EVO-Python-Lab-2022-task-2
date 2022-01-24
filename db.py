@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from datetime import datetime
 
 
-client = MongoClient()
+client = MongoClient("mongodb+srv://doodko:fyyeirf1008@evo-python-lab-2022.iow5y.mongodb.net/PyLab?retryWrites=true&w=majority")
 db = client['PyLab']
 friends = db['friends']
 
