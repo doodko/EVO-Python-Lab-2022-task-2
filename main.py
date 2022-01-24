@@ -22,7 +22,7 @@ def say_hello(username : str = Form(...)):
 
 @app.get("/friends")
 def friends_page():
-    friens_list = 'Тут були: ' + ', '.join(db.find_all_friends()) + '...'
+    friens_list = 'Тут були: ' + ', '.join(db.find_all_friends()) + ' та інші, які не захотіли вітатись...'
     return Response(friens_list, media_type="text/html")
     
 
