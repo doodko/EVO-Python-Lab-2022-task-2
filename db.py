@@ -8,17 +8,9 @@ friends = db['friends']
 
 
 
-cache = True # False to disable caching db
-if cache:
-    friends_list = [fr["name"] for fr in friends.find()]
-else:
-    friends_list = []
-
-
 def add_new_friend(name):
     friend = {'name': name, 'date': datetime.now()}
     friends.insert_one(friend)
-    update_cache()
 
 
 def check_if_met_before(name):
@@ -29,13 +21,5 @@ def check_if_met_before(name):
 
 
 def find_all_friends():
-    global friends_list
-    if not cache:
-        update_cache()
-    return friends_list  
-
-
-def update_cache():
-    global friends_list
     friends_list = [fr["name"] for fr in friends.find()]
-
+    return friends_list  
